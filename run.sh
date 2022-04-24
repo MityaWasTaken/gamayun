@@ -1,1 +1,1 @@
-gcc "main.c" -o "robin/main"; robin/main
+gcc "main.c" -o "binaries/main"; binaries/main

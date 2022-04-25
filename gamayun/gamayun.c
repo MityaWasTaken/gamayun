@@ -2,6 +2,8 @@
 // saturday april 23
 // gamayun.c
 
+// DEVNOTE: REMEMBER TO TURN THESE REPEATING IF STATEMENTS FROM 41-50 AND 64-72 TO A SWITCH STATEMENT TOMORROW
+
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -33,19 +35,17 @@ void FileTypeError() {
 }
 
 // function gets the amount of time it takes for a program to exectue
+
 void getTime(const char *type, char *filename) {
 
     char command[100];
     if(type == "c") {
         sprintf(command, "gcc %s -o main; ./main", filename);
-    } 
-    else if(type == "python") {
+    } else if(type == "python") {
         sprintf(command, "python3 %s", filename);
-    } 
-    else if(type == "java") {
+    } else if(type == "java") {
         sprintf(command, "java %s", filename);
-    } 
-    else {
+    } else {
         FileTypeError();
     }
 
@@ -63,14 +63,11 @@ void getSize(char type[], const char *file) {
     
     if(type == "c") {
         sprintf(command, "gcc %s -o main; ./main", file);
-    } 
-    else if(type == "python") {
+    } else if(type == "python") {
         sprintf(command, "python3 %s", file);
-    } 
-    else if(type == "java") {
+    } else if(type == "java") {
         sprintf(command, "java %s", file);
-    } 
-    else {
+    } else {
         FileTypeError();
     }
 

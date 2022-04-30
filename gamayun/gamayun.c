@@ -50,18 +50,6 @@ void getTime(const char *type, char *filename) {
         case "":
             FileTypeError();
     }
-    if(type == "c") {
-        sprintf(command, "gcc %s -o main; ./main", filename);
-    } 
-    else if(type == "python") {
-        sprintf(command, "python3 %s", filename);
-    } 
-    else if(type == "java") {
-        sprintf(command, "java %s", filename);
-    } 
-    else {
-        FileTypeError();
-    }
 
     time_t t = clock();
 

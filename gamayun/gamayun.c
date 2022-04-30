@@ -1,8 +1,7 @@
 // mityawastaken
-// saturday april 23
 // gamayun.c
-
-// DEVNOTE: REMEMBER TO TURN THESE REPEATING IF STATEMENTS FROM 41-50 AND 64-72 TO A SWITCH STATEMENT TOMORROW
+// inital release | 4/23/22
+// update v1.0.6  | 4/30/22
 
 #include <stdio.h>
 #include <time.h>
@@ -35,17 +34,32 @@ void FileTypeError() {
 }
 
 // function gets the amount of time it takes for a program to exectue
-
 void getTime(const char *type, char *filename) {
 
     char command[100];
+    switch(type){
+        case "c":
+            sprintf(command, "gcc %s -o main; ./main", filename);
+            break;
+        case "python":
+            sprintf(command, "python3 %s", filename);
+            break;
+        case "java":
+            sprintf(command, "java %s", filename);
+            break;
+        case "":
+            FileTypeError();
+    }
     if(type == "c") {
         sprintf(command, "gcc %s -o main; ./main", filename);
-    } else if(type == "python") {
+    } 
+    else if(type == "python") {
         sprintf(command, "python3 %s", filename);
-    } else if(type == "java") {
+    } 
+    else if(type == "java") {
         sprintf(command, "java %s", filename);
-    } else {
+    } 
+    else {
         FileTypeError();
     }
 
@@ -60,15 +74,20 @@ void getTime(const char *type, char *filename) {
 
 void getSize(char type[], const char *file) {
     char command[100];
-    
-    if(type == "c") {
-        sprintf(command, "gcc %s -o main; ./main", file);
-    } else if(type == "python") {
-        sprintf(command, "python3 %s", file);
-    } else if(type == "java") {
-        sprintf(command, "java %s", file);
-    } else {
-        FileTypeError();
+    switch(type) {
+        case "c":
+            sprintf(command, "gcc %s -o main; ./main", file);
+            break;
+        case "python":
+            sprintf(command, "python3 %s", file);
+            break;
+        case "java":
+            sprintf(command, "java %s", file);
+            break;
+        case "":
+            FileTypeError();
+            break;
+
     }
 
     FILE* fp = fopen(file, "r");

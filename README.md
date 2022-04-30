@@ -1,8 +1,4 @@
 gamayun (python, c, java) </br>
 =====================================
-program monitor for python, java, and c 
-
-# update data
---VERSION--|--RELEASE_DATE--|--NOTES_ABOUT_RELEASE--<br><br>
-
-v1.0.6---|---4/30/22---|---replacing massive else-if statements with switch case
+program monitor for python, java, and c <br>
+![release documentation](https://docs.google.com/document/d/13tb7iUKrCBRFBT7WpkVskJqTrxw0ByolSQR-KGHDw5Q/edit?usp=sharing)

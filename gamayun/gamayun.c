@@ -37,18 +37,18 @@ void FileTypeError() {
 void getTime(const char *type, char *filename) {
 
     char command[100];
-    switch(type){
-        case "c":
-            sprintf(command, "gcc %s -o main; ./main", filename);
-            break;
-        case "python":
-            sprintf(command, "python3 %s", filename);
-            break;
-        case "java":
-            sprintf(command, "java %s", filename);
-            break;
-        case "":
-            FileTypeError();
+
+    if(type == "c") {
+        sprintf(command, "gcc %s -o main; ./main", filename);
+    } 
+    else if(type == "python") {
+        sprintf(command, "python3 %s", filename);
+    } 
+    else if(type == "java") {
+        sprintf(command, "java %s", filename);
+    } 
+    else {
+        FileTypeError();
     }
 
     time_t t = clock();
@@ -62,20 +62,15 @@ void getTime(const char *type, char *filename) {
 
 void getSize(char type[], const char *file) {
     char command[100];
-    switch(type) {
-        case "c":
-            sprintf(command, "gcc %s -o main; ./main", file);
-            break;
-        case "python":
-            sprintf(command, "python3 %s", file);
-            break;
-        case "java":
-            sprintf(command, "java %s", file);
-            break;
-        case "":
-            FileTypeError();
-            break;
 
+    if(type == "c") {
+        sprintf(command, "gcc %s -o main; ./main", file);
+    } else if(type == "python") {
+        sprintf(command, "python3 %s", file);
+    } else if(type == "java"){
+        sprintf(command, "java %s", file);
+    } else {
+        FileTypeError();
     }
 
     FILE* fp = fopen(file, "r");
